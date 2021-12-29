@@ -315,7 +315,7 @@ typedef struct gitem_s
 
 //Maj++
 // Item Ammo (IT_AMMO)
-gitem_t *item_shells,
+extern gitem_t *item_shells,
         *item_cells,
         *item_rockets,
         *item_slugs,
