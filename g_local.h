@@ -9,6 +9,9 @@
 #include "p_menu.h"																					//ZOID++
 #include "g_chase.h"																				//CW++
 
+#ifndef _WIN32
+#define stricmp strcasecmp
+#endif
 
 // The "gameversion" client command will print this plus the compile date.
 #define	GAMEVERSION	"awaken2"																		//CW
@@ -796,10 +799,10 @@ extern	int	body_armor_index;
 
 extern	int	meansOfDeath;
 
-#define	FOFS(x) (int)&(((edict_t *)0)->x)
-#define	STOFS(x) (int)&(((spawn_temp_t *)0)->x)
-#define	LLOFS(x) (int)&(((level_locals_t *)0)->x)
-#define	CLOFS(x) (int)&(((gclient_t *)0)->x)
+#define	FOFS(x) (size_t)&(((edict_t *)0)->x)
+#define	STOFS(x) (size_t)&(((spawn_temp_t *)0)->x)
+#define	LLOFS(x) (size_t)&(((level_locals_t *)0)->x)
+#define	CLOFS(x) (size_t)&(((gclient_t *)0)->x)
 
 #define random()	((rand () & 0x7fff) / ((float)0x7fff))
 #define crandom()	(2.0 * (random() - 0.5))
