@@ -22,6 +22,8 @@
 #define AWK_VSTRING(x)		AWK_VSTRING2(x)
 #define AWK_STRING_VERSION	AWK_VSTRING(AWK_VERSION)
 
+#define min(a,b) (a < b ? a : b) 
+
 /*
 Author tags:
  CW   = Chris Walker (Musashi)
